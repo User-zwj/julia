@@ -1,3 +1,44 @@
+#println(), Using Printf, @printf, #index starts from 1
+#function funname(x,y) end
+#x::Int8
+#parse(typeto,datafrom), push!(var,val), delete!(d1,key), splice!(var,idx,val)
+#string(stra,strb), or, stra*strb
+#"$var"
+# println(findfirst(isequal('i'),"Keigo"))
+# println(occursin("key","monkey"))
+# if elseif elseif else end
+# @printf("true || false = %s\n", true || false ? "true" : "false")
+# while global i+=1 end
+# for i=1:5 ... end / for i in 1:5 ... end
+# findall(fun, var)    #fun returns true or false
+# count(fun, var)
+# a =[1 2 3; 4 5 6], b=[1,2], size(var), length(var), Array{Int32}(undef,5), zeros(Int32,2,3)
+# splice!(a4,1,[1,2,3]) #replace
+# collect(1:5); push!(var,10) #append
+# tuple no size; t1=(1,2,3); t2=((1,2),(3,4)), t2[1][2]; t3=(sue=("Sue",100),paul=("Paul",23)), t3.sue
+# d1=Dict("S1"=>["Jane",12,"F"],"S2"=>"Jack"), d1["S1"]; d2=Dict(:pi=>3.14,:e=>2.718), d2[:pi]
+# keys(d1), values(d1), d1["S3"]="Andy", delete!(d1,"S1"), for (key,value) in d1 ... end
+# st1 = Set(["Jim","Pam","Jim"]), union, intersect, setdiff
+# function square(x) ... end; map((x,y) -> x+y, [1,2],[3,4])
+# map(x->x*x,[1,2,3])
+# longest = reduce((x,y) -> length(x) > length(y) ? x : y, sArray)
+# println(longest)
+# @enum Color begin .. end; struct stu name::type ... end
+# struct.name; t3.sue
+# chomp(readline())
+# open("file.txt","w") do file ... end; read(file, String); write(file,"Content"); eachline(file)
+# # macro doMore(n,exp)
+#     quote
+#         for i = 1:$(esc(n))
+#             $(esc(exp))
+#         end
+#     end
+# end
+
+
+
+
+
 using Printf
 using Statistics
 
@@ -5,7 +46,7 @@ using Statistics
 # s = 0
 # s = "Dog"
 # println(s)
-#
+
 ##################
 # Assert datatype
 # function changeNum()
@@ -97,7 +138,25 @@ using Statistics
 #         break
 #     end
 # end
+# print("List Iteration\n")
+# l = ["geeks", "for", "geeks"]
+# for i in l
+#     println(i)
+# end
 
+# for i in 1:5
+#     for j in 1:i
+#         print(j, " ")
+#     end
+#     println()
+# end
+
+# for i = 1:5
+#     for j = 1:i
+#         print(j," ")
+#     end
+#     println()
+# end
 
 # for i = 1:5
 #     println(i)
@@ -283,7 +342,7 @@ using Statistics
 #round,floor,ceil,abs,sqrt,cbrt,hypot,exp(2),log(100),log2(100),log10(100)
 # @printf("hypot(90,90) = %d\n", hypot(90,90))
 # @printf("log(100) = %d\n", log(100))
-# @printf("lo2(100) = %d\n", log2(100))
+# @printf("log2(100) = %d\n", log2(100))
 # @printf("log10(100) = %d\n", log10(100))
 # x = 5
 # println(2x)
@@ -387,19 +446,19 @@ using Statistics
 #
 # @doMore(2,println("Hello"))
 
-macro doWhile(exp)
-    @assert exp.head == :while
-    esc(quote
-    $(exp.args[2])
-    $exp
-end   )
-end
-
-z = 0
-@doWhile while z < 10
-    global z += 1
-    println(z)
-end    
+# macro doWhile(exp)
+#     @assert exp.head == :while
+#     esc(quote
+#     $(exp.args[2])
+#     $exp
+# end   )
+# end
+#
+# z = 0
+# @doWhile while z < 10
+#     global z += 1
+#     println(z)
+# end
 
 
 ##################
